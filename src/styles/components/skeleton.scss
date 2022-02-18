@@ -1,0 +1,252 @@
+@use "sass:math";
+
+.skeleton {
+  box-shadow: 0 4px 10px 0 rgba(33, 33, 33, 0.15);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border-radius: 7px;
+}
+
+.skeleton::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 2;
+  left: -150px;
+  top: 0;
+  height: 100%;
+  width: 150px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    #e8e8e8 50%,
+    transparent 100%
+  );
+  animation: load 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes load {
+  from {
+    left: -150px;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
+.skeleton-container {
+  margin: 20px 0;
+}
+
+.skeleton-restaurant {
+  width: 100%;
+  height: 425px;
+  border-radius: 7px;
+
+  .skeleton-restaurant-thumbnail {
+    position: relative;
+
+    .skeleton-restaurant-image {
+      width: 100%;
+      height: 280px;
+      background-color: lightgrey;
+    }
+
+    .skeleton-restaurant-city {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      background-color: #eee;
+      width: 150px;
+      height: 32px;
+      border-bottom-right-radius: 7px;
+    }
+
+    .skeleton-restaurant-rating {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: block;
+      background-color: #eee;
+      width: 50px;
+      height: 32px;
+      border-bottom-left-radius: 7px;
+    }
+  }
+
+  .skeleton-restaurant-info {
+    padding: 16px 32px 32px 32px;
+    background-color: white;
+    height: 100%;
+
+    .skeleton-restaurant-title {
+      margin: auto;
+      width: 150px;
+      height: 36px;
+      background-color: lightgrey;
+      border-radius: 7px;
+    }
+
+    .skeleton-restaurant-description div {
+      width: auto;
+      height: 20px;
+      background-color: lightgrey;
+      border-radius: 7px;
+      margin: 10px;
+    }
+  }
+}
+
+.skeleton-figure {
+  background-color: lightgrey;
+  border-radius: 7px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  padding-top: math.div(591.44px, 1127.34px) * 100%;
+  position: relative;
+
+  .skeleton-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .skeleton-rating {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    background-color: #eee;
+    width: 50px;
+    height: 32px;
+    border-bottom-left-radius: 7px;
+  }
+}
+
+.skeleton-recommendation-info {
+  padding: 32px;
+
+  .vertical {
+    margin: 0 auto;
+    padding: 20px;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+
+    .skeleton-recommendation-title,
+    .skeleton-recommendation-city {
+      background-color: lightgrey;
+      width: 40%;
+      height: 36px;
+      border-radius: 7px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.skeleton-recommendation-description {
+  padding: 0 32px 32px 32px;
+
+  div {
+    border-radius: 7px;
+    background-color: lightgrey;
+    width: auto;
+    height: 20px;
+    margin: 10px;
+  }
+
+  .skeleton-recommendation-button {
+    border-radius: 7px;
+    background-color: lightgrey;
+    width: 120px;
+    height: 36px;
+    margin: auto;
+  }
+}
+
+.skeleton-restaurant-detail-title {
+  padding: 2em;
+
+  div {
+    border-radius: 7px;
+    background-color: lightgrey;
+    width: 150px;
+    height: 36px;
+    margin: auto;
+  }
+}
+
+.skeleton-restaurant-detail-description-container {
+  padding: 16px 32px;
+  display: grid;
+  gap: 2px;
+
+  .skeleton-restaurant-detail-description {
+    .shape {
+      border-radius: 7px;
+      background-color: lightgrey;
+      width: 100%;
+      height: 20px;
+    }
+  }
+}
+
+.skeleton {
+  li {
+    list-style-type: none;
+  }
+}
+
+.skeleton-bar {
+  .shape {
+    border-radius: 7px;
+    background-color: lightgrey;
+    width: 100%;
+    height: 20px;
+  }
+}
+
+.skeleton-review-container {
+  margin: 20px 0;
+}
+
+.skeleton-review-item {
+  border-radius: 7px;
+  background-color: white;
+  width: 100%;
+  height: 120px;
+  padding: 20px;
+
+  .shape:nth-child(1) {
+    border-radius: 7px;
+    background-color: lightgrey;
+    width: 25%;
+    height: 20px;
+    margin: 0 auto 5px auto;
+  }
+
+  .shape:nth-child(2) {
+    border-radius: 7px;
+    background-color: #eee;
+    width: 25%;
+    height: 6px;
+    margin: 0 auto 10px auto;
+  }
+
+  .shape:nth-child(3) {
+    border-radius: 7px;
+    background-color: lightgrey;
+    width: 70%;
+    height: 18px;
+    margin: 0 auto;
+    padding: 10px 0;
+  }
+}

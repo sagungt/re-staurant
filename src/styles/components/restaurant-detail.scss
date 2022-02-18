@@ -1,0 +1,304 @@
+.restaurant-detail {
+  display: grid;
+
+  h1 {
+    @include heading;
+  }
+
+  .restaurant-detail-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0 16px;
+
+    .restaurant-detail-figure {
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .restaurant-detail-rating {
+      @include rating;
+      font-size: 1.2rem;
+    }
+
+    span {
+      font-size: 1.2rem;
+    }
+
+    .restaurant-detail-category {
+      font-size: 0.8rem;
+      display: inline-block;
+      border-radius: 25px;
+      border: 1px solid $alternate;
+      padding: 5px 15px;
+      margin: 0 5px;
+      align-items: center;
+      text-transform: uppercase;
+    }
+
+    figcaption {
+      text-align: justify;
+      font-size: 15px;
+      line-height: 1.5em;
+      margin: 10px;
+    }
+
+    .restaurant-detail-info {
+      padding: 16px 0;
+
+      .restaurant-detail-title {
+        font-size: 24px;
+        margin: 10px auto 20px auto;
+      }
+
+      dl {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 35% 1fr;
+        grid-template-areas:
+          "nt ni"
+          "cit cii"
+          "at ai"
+          "rt ri"
+          "cat cai"
+          "mt mt"
+          "mi mi"
+          "rvt rvt"
+          "rvi rvi"
+          "rft rft"
+          "rfi rfi";
+        gap: 1em;
+
+        dt {
+          span {
+            font-size: 1.2rem;
+            font-weight: bold;
+          }
+        }
+
+        dd {
+          font-size: 1rem;
+
+          form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            padding-bottom: 20px;
+
+            input[type="text"] {
+              width: 100%;
+              height: 50px;
+              padding: 12px 20px;
+              display: inline-block;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            }
+
+            textarea {
+              border: 1px solid #ccc;
+              padding: 12px 20px;
+              border-radius: 4px;
+              box-sizing: border-box;
+              display: inline-block;
+              resize: none;
+              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            }
+          }
+
+          button {
+            font-size: 0.8rem;
+            width: auto;
+            padding: 14px 10px;
+          }
+        }
+
+        dt:nth-child(1) {
+          grid-area: nt;
+        }
+        dd:nth-child(2) {
+          grid-area: ni;
+        }
+        dt:nth-child(3) {
+          grid-area: cit;
+        }
+        dd:nth-child(4) {
+          grid-area: cii;
+        }
+        dt:nth-child(5) {
+          grid-area: at;
+        }
+        dd:nth-child(6) {
+          grid-area: ai;
+        }
+        dt:nth-child(7) {
+          grid-area: rt;
+        }
+        dd:nth-child(8) {
+          grid-area: ri;
+        }
+        dt:nth-child(9) {
+          grid-area: cat;
+        }
+        dd:nth-child(10) {
+          grid-area: cai;
+        }
+        dt:nth-child(11) {
+          grid-area: mt;
+        }
+        dd:nth-child(12) {
+          grid-area: mi;
+        }
+        dt:nth-child(13) {
+          grid-area: rvt;
+        }
+        dd:nth-child(14) {
+          grid-area: rvi;
+        }
+        dt:nth-child(15) {
+          grid-area: rft;
+        }
+        dd:nth-child(16) {
+          grid-area: rfi;
+        }
+      }
+
+      .menus {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-top: 10px;
+
+        ul:nth-child(1) {
+          li:nth-child(1) {
+            border-top-left-radius: 10px;
+          }
+
+          li:last-child {
+            border-bottom-left-radius: 10px;
+          }
+        }
+
+        ul:nth-child(2) {
+          li:nth-child(1) {
+            border-top-right-radius: 10px;
+          }
+
+          li:last-child {
+            border-bottom-right-radius: 10px;
+          }
+        }
+
+        .menu {
+          padding: 0;
+          margin: 0;
+          list-style-position: inside;
+          list-style-type: circle;
+
+          li:nth-child(1) {
+            list-style-type: none;
+            padding-top: 10px;
+            background-color: #ccc;
+          }
+
+          li {
+            border: 1px solid #ddd;
+            margin-top: -1px;
+            background-color: #f6f6f6;
+            padding: 12px;
+            font-size: 1rem;
+          }
+
+          .heading {
+            text-transform: uppercase;
+            font-weight: bold;
+          }
+        }
+      }
+
+      .review {
+        display: grid;
+        grid-template-columns: 1fr;
+        background-color: white;
+        border-radius: 10px;
+        margin: 10px 20px;
+        padding: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+        span,
+        p {
+          text-align: center;
+        }
+
+        p {
+          font-style: italic;
+        }
+
+        .review-name {
+          font-size: 1.4rem;
+        }
+
+        .review-date {
+          color: $alternate;
+          font-size: 0.7em;
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+.favorite,
+.favorited {
+  font-size: 2rem;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background-color: $alternate;
+  color: white;
+  border: 0;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hide {
+  display: none;
+}
+
+#addReviewButton {
+  transition: background 0.25s ease;
+  text-transform: uppercase;
+  margin: 10px auto;
+  text-align: center;
+  cursor: pointer;
+  padding: 1.1em;
+  color: $text;
+  border-radius: 5px;
+  background-color: $alternate;
+  display: block;
+  width: 170px;
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#addReviewButton:hover {
+  background-color: lighten($color: $alternate, $amount: 10%);
+}
+
+.restaurant-not-found {
+  padding: 2em 0 4em 0;
+}

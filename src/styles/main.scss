@@ -1,0 +1,71 @@
+@import "variables.scss";
+@import "utilities.scss";
+@import "fonts.scss";
+@import "components/app-bar.scss";
+@import "components/hero.scss";
+@import "components/recommendation.scss";
+@import "components/restaurants.scss";
+@import "components/restaurant-detail.scss";
+@import "components/toast-alert.scss";
+@import "components/error.scss";
+@import "components/skeleton.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 12px;
+  font-weight: bold !important;
+  background-color: $text;
+}
+
+// Skip to content
+
+.skip {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  background-color: $alternate;
+  color: $text;
+  padding: 10px;
+  z-index: 100;
+  font-size: large;
+}
+
+.skip:focus {
+  top: 0;
+}
+
+// main
+
+main {
+  width: 100%;
+  margin: 0 auto;
+
+  &:empty {
+    height: 100vh;
+  }
+}
+
+// Footer
+
+footer {
+  padding: 1.5em;
+  width: 100%;
+  text-align: center;
+  background-color: $alternate;
+  font-size: 1rem;
+  font-weight: bold;
+}

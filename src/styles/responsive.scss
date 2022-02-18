@@ -1,0 +1,265 @@
+@import "variables.scss";
+
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 18px !important;
+  }
+
+  .no-webp .hero {
+    background-image: url("/images/hero/hero-image-large.jpg");
+  }
+
+  .webp .hero {
+    background-image: url("/images/hero/hero-image-large.webp");
+  }
+
+  .header {
+    .header-inner {
+      .header-title {
+        text-align: start;
+      }
+    }
+
+    #menu {
+      display: none;
+    }
+
+    .nav {
+      visibility: visible;
+      opacity: 1;
+      width: 100%;
+      position: relative;
+      color: white;
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0);
+      background-color: black;
+      padding-top: 0;
+      margin: auto 0;
+
+      .nav-list {
+        width: 100%;
+        padding: 0 30px 0 0;
+        margin: 0;
+        text-align: end;
+      }
+
+      .nav-item {
+        text-align: center;
+        display: inline-block;
+        text-transform: uppercase;
+        list-style-type: none;
+        width: 30%;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .recommendation {
+    .recommendation-content {
+      padding: 0 32px;
+
+      .recommendation-info {
+        a {
+          transition: background 0.25s ease;
+        }
+        a:hover {
+          background-color: lighten($color: $alternate, $amount: 10%);
+        }
+      }
+
+      .recommendation-button {
+        font-size: 16px !important;
+      }
+    }
+  }
+
+  .restaurants {
+    .restaurant-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px;
+    }
+
+    .restaurant-thumbnail {
+      .restaurant-image {
+        width: 100%;
+        height: 260px;
+        transition: transform 0.5s, filter 1s ease-in-out;
+        filter: brightness(110%);
+      }
+
+      .restaurant-image:hover {
+        transform: scale(1.1);
+        filter: brightness(100%);
+        transform-origin: 50% 50%;
+      }
+    }
+
+    .restaurant-info {
+      h2 {
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .restaurant-detail {
+    .restaurant-detail-content {
+      display: flex;
+      flex-wrap: wrap;
+
+      .restaurant-detail-figure {
+        padding: 10px;
+        flex-basis: 50%;
+        align-items: flex-start;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+      }
+
+      figure {
+        .restaurant-detail-rating {
+          top: 10px;
+          right: 10px;
+        }
+
+        figcaption {
+          -webkit-line-clamp: unset;
+          line-clamp: unset;
+        }
+
+        #captionToggler {
+          display: none;
+        }
+      }
+
+      .restaurant-detail-info {
+        padding: 10px;
+        flex-basis: 50%;
+
+        dl {
+          grid-template-columns: 30% 1fr;
+        }
+
+        .review {
+          margin: 10px 0;
+        }
+      }
+    }
+  }
+
+  .skeleton-container {
+    margin: 0;
+  }
+
+  .skeleton-restaurant {
+    height: 405px;
+  }
+
+  .skeleton-restaurant-image {
+    height: 260px !important;
+  }
+
+  .skeleton-restaurant-detail-description-container {
+    gap: 10px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header {
+    .nav {
+      .nav-item {
+        width: 25%;
+      }
+    }
+  }
+  .recommendation-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .restaurants {
+    .restaurant-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 20px;
+    }
+
+    .restaurant-image {
+      height: 220px !important;
+    }
+  }
+
+  .restaurant-detail {
+    .restaurant-detail-content {
+      .restaurant-detail-figure {
+        flex-basis: 45%;
+      }
+
+      .restaurant-detail-info {
+        flex-basis: 55%;
+
+        .review-container {
+          margin: 0;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 10px;
+
+          .review {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .skeleton-container {
+    margin: 0;
+  }
+
+  .skeleton-restaurant {
+    height: 365px;
+  }
+
+  .skeleton-restaurant-image {
+    height: 220px !important;
+  }
+
+  .skeleton-restaurant-detail-description-container {
+    gap: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header {
+    .navbar {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  }
+  main {
+    max-width: 1200px;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 40% 60%;
+
+    .hero-title {
+      text-align: end;
+    }
+
+    .hero-tagline {
+      text-align: start;
+    }
+  }
+}

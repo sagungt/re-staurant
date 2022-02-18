@@ -1,0 +1,66 @@
+.recommendation {
+  display: grid;
+
+  h1 {
+    @include heading;
+  }
+
+  .recommendation-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0 16px;
+
+    .recommendation-figure {
+      max-width: 100%;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    figcaption {
+      @include rating;
+      font-size: 1.2rem;
+    }
+
+    .recommendation-info {
+      padding: 16px 28px;
+
+      .recommendation-title {
+        font-size: 24px;
+        margin: 10px auto;
+      }
+
+      .recommendation-description {
+        text-align: justify;
+        font-size: 15px;
+        line-height: 1.5em;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 10;
+        -webkit-box-orient: vertical;
+      }
+
+      .recommendation-button {
+        text-transform: uppercase;
+        margin: 10px auto;
+        font-size: 1.2em;
+        font-weight: bold;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        padding: 1.1em;
+        color: $text;
+        border-radius: 5px;
+        background-color: $alternate;
+        display: block;
+        width: 120px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}

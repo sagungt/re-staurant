@@ -1,0 +1,42 @@
+.no-webp .hero {
+  background-image: url("/images/hero/hero-image-small.jpg");
+}
+
+.webp .hero {
+  background-image: url("/images/hero/hero-image-small.webp");
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  height: 350px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  text-align: center;
+  background-position: center;
+
+  .hero-inner {
+    margin: 0 auto;
+    max-width: 800px;
+
+    .hero-title {
+      color: black;
+      -webkit-text-fill-color: white;
+      -webkit-text-stroke-width: 0.6px;
+      -webkit-text-stroke-color: black;
+      font-weight: 500;
+      font-size: 48px;
+      font-family: "Dancing Script";
+      padding: 0 10px;
+    }
+
+    .hero-tagline {
+      color: $text;
+      font-size: 16px;
+      font-weight: 200;
+      margin: 16px 24px;
+      line-height: 1.4em;
+    }
+  }
+}

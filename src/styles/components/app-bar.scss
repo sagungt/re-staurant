@@ -1,0 +1,86 @@
+// App Bar
+
+.header {
+  background-color: black;
+  min-height: 60px;
+
+  .navbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .header-inner {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding-left: 30px;
+
+    .header-title {
+      font-weight: 300;
+      font-size: 3em;
+      margin: 0.5em 0.25em;
+      color: $text;
+      font-family: "Dancing Script";
+    }
+  }
+
+  .header-menu {
+    font-size: 32px;
+    padding: 1rem;
+    text-align: end;
+    color: $text;
+    z-index: 11;
+    justify-self: end;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .header-menu:focus {
+    outline: white solid 1px;
+  }
+}
+
+.nav {
+  @include fullwidth(center);
+  @include translate(0, -500px);
+  z-index: 10;
+  position: absolute;
+  transition: transform 0.3s, visibility 0.2s ease;
+  background-color: $secondary-color;
+  padding-top: 30px;
+  visibility: hidden;
+  opacity: 0;
+
+  .nav-list { @include fullwidth(center); }
+
+  .nav-item {
+    box-sizing: border-box;
+    display: list-item;
+    width: 100%;
+    text-align: center;
+    line-height: 24px;
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  
+  a {
+    color: $text;
+    display: inline-block;
+    text-decoration: none;
+    padding: 1rem;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.open {
+  @include translate(0, 0);
+  visibility: visible;
+  opacity: 1;
+}
